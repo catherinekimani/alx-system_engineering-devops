@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+# but dispays "Hi" the 9th time
+
+str=1
+while [ $str -le 10 ]
+do
+	if [ $str -eq 9 ]; then
+		echo "Hi"
+	else
+		echo "Best School"
+	fi
+	((str++))
+done
