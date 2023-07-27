@@ -2,7 +2,7 @@
 # This script is displaying "Best School" 10 times
 # but dispays "Hi" the 9th time
 
-str=1
+str=0
 while [ $str -le 10 ]
 do
 	if [ $str -eq 9 ]; then
