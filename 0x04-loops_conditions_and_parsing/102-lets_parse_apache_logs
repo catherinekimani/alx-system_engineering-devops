@@ -4,4 +4,4 @@
 # #9 - HTTP status code
 
 logfile="apache-access.log"
-awk '{print $1 $9}' "$logfile"
+awk '{print $1, $9}' "$logfile"
