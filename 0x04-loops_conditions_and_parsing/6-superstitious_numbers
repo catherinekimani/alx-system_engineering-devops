@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# This script displays 1 to 20
+# but dispays 4 then "bad luck from China" the 4th time
+# and dispays 9 then "bad luck from Japan" the 9th time
+# and dispays 17 then "bad luck from Italy" the 17th time
+
+numbers=1
+while [ $numbers -le 20 ]; do
+	case $numbers in
+	4)
+		echo "4"
+		echo "bad luck from China"
+		;;
+	9)
+		echo "9"
+		echo "bad luck from Japan"
+		;;
+	17)
+		echo "17"
+		echo "bad luck from Italy"
+		;;
+	*)
+		echo $numbers
+		;;
+	esac
+	((numbers++))
+done
