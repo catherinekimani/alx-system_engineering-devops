@@ -1,35 +1,26 @@
 #!/usr/bin/env bash
 # manage my processes
 
-if [ "$1" == "start" ]
-then
-	./manage_my_process &
-	echo $$ > /var/run/my_process.pid
-	echo "manage_my_process started"
+PID_FILE="/var/run/my_process.pid"
+case "$1" in
+	start)
+		./manage_my_process &
+		echo $! > $PID_FILE
+		echo "manage_my_process started"
+		;;
+	stop)
+		kill "$(cat $PID_FILE)"
+		rm $PID_FILE
+		echo "manage_my_process stopped"
+		;;
+	restart)
+		kill "$(cat $PID_FILE)"
+		rm $PID_FILE
+		./manage_my_process &
+		echo $! > $PID_FILE
+		echo "manage_my_process restarted"
+		;;
 
-elif [ "$1" == "stop" ]
-then
-	kill "$(pgrep -f /manage_my_process)" 
-	rm /var/run/my_process.pid
-	echo "manage_my_process stopped"
-
-elif [ "$1" == "restart" ]
-then
-	kill "$(pgrep -f /manage_my_process)"
-	rm /var/run/my_process.pid
-	./manage_my_process &
-	echo $$ > /var/run/my_process.pid
-	echo "manage_my_process restarted"
-fi
-
-if [ "$#" -ne 1 ]
-then
-	echo "Usage: manage_my_process {start|stop|restart}"
-	exit $?
-fi
-
-if [ "$1" != "start" ] && [ "$1" != "stop" ] && [ "$1" != "restart" ]
-then
-	echo "Usage: manage_my_process {start|stop|restart}"
-	exit $?
-fi
+		*)
+			echo "Usage: manage_my_process {start|stop|restart}"
+esac
