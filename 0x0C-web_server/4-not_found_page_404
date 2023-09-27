@@ -2,7 +2,7 @@
 # Not found page 404
 
 apt-get update -y
-apt-get install inginx -y
+apt-get install nginx -y
 sudo ufw allow 22
 sudo ufw allow 80
 sudo ufw enable
