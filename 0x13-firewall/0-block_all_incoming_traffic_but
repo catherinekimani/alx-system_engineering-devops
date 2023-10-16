@@ -1,26 +1,9 @@
-#!/usr/bin/env bash
-# install the ufw firewall and setup a few rules
-
-# update
 sudo apt-get update
-
-# install ufw
 sudo apt-get install ufw
-
-# enable ufw
 sudo ufw enable
-
-# set default policies
 sudo ufw default deny incoming
-
-# allow SSH, HTTPS, HTTP
 sudo ufw allow 22/tcp
 sudo ufw allow 443/tcp
 sudo ufw allow 80/tcp
-
-
-# enable ufw
 sudo ufw enable
-
-# check ufw status
 sudo ufw status
