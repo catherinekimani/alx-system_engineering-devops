@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-#install the ufw firewall and setup a few rules
+# install the ufw firewall and setup a few rules
 
-#update
+# update
 sudo apt-get update
 
-#install ufw
+# install ufw
 sudo apt-get install ufw
 
 # enable ufw
