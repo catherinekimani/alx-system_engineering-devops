@@ -35,7 +35,7 @@ defaults
 	errorfile 504 /etc/haproxy/errors/504.http
 frontend haproxy_balancer
     bind *:80
-    bind *:443 ssl crt /etc/ssl/certs/sslsophiaterry.tech.pem
+    bind *:443 ssl crt /etc/ssl/certs/catherinekimani.tech.pem
     redirect scheme https code 301 if !{ ssl_fc }
     mode http
     default_backend webservers
