@@ -1,5 +1,6 @@
 # Postmortem: Web Service Outage Incident
-![kay](image.png)
+![download](https://github.com/catherinekimani/alx-system_engineering-devops/assets/97945410/8b5bd6da-7f78-4643-b3eb-54f407d54481)
+
 
 ## Issue Summary:
 1. Duration: 2 hours (Start: 2023-11-15 9:00 AM, End: 2023-11-15 11:00 PM)
